@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Superhero Sightings</title>
+  </head>
+  <body>
+    <!-- Main Body of Page -->
+    <div class="container">
+        <div class="row m-4">
+            <div class="col text-center border border-dark">
+                <h1>Superhero Sightings</h1>
+            </div>
+        </div>
+        <div class="row m-4 border border-dark">
+            <div class="row">
+            <div class="col m-3">
+                <a href="superPowers" class="btn btn-outline-primary btn-lg">SuperPowers</a>
+            </div>
+            <div class="col m-3">
+                <a href="superheroes" class="btn btn-outline-primary btn-lg">Superheroes</a>
+            </div>
+            <div class="col m-3">
+                <a href="addresses" class="btn btn-outline-primary btn-lg">Addresses</a>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col m-3">
+                <a href="locations" class="btn btn-outline-primary btn-lg">Locations</a>
+            </div>
+            <div class="col m-3">
+                <a href="organizations" class="btn btn-outline-primary btn-lg">Organizations</a>
+            </div>
+            <div class="col m-3">
+                <a href="sightings" class="btn btn-outline-primary btn-lg">Sightings</a>
+            </div>
+            </div>
+        </div>
+        <div class="row m-4 border border-dark">
+                <div class="col-6 text-right"><strong>ID</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.sightingId}">display id</span>
+                </div>
+                
+                <div class="col-6 text-right"><strong>Date</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${#temporals.format(sighting.date, 'MM/dd/yyyy')}">display Date</span>
+                </div>
+                
+                <div class="col-6 text-right"><strong>Superhero Name</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.superhero.heroName}">display Superhero Name</span>
+                </div>
+                 <div class="col-6 text-right"><strong>Superhero Super Power </strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.superhero.superPower.superPowerName}">display Superhero Super Power</span>
+                </div>
+                <div class="col-6 text-right"><strong>Location</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${'Location Name- '+sighting.location.locationName}">display Location Name</span><br>
+                    <span th:text="${'Location Description -'+sighting.location.locationDescription}">display Location Description</span><br>
+                    <span th:text="${'Longitude- '+sighting.location.longitude}">display Location Longitude</span><br>
+                    <span th:text="${'Latitude- '+sighting.location.latitude}">display Location Latitude</span><br>
+                    <span th:text="${'Address- '+sighting.location.address.street+', '}">display Location Address street</span>
+                    <span th:text="${sighting.location.address.city+', '}">display Location Address City</span>
+                    <span th:text="${sighting.location.address.state}">display Location Address State</span>
+                    <span th:text="${sighting.location.address.zipcode+', '}">display Location Address Zip Code</span>
+                    <span th:text="${sighting.location.address.country}">display Location Address Country</span>
+                </div>
+            </div>
+    </div>
+    <!-- End main body -->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
+
